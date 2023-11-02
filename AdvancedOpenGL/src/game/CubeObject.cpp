@@ -8,7 +8,8 @@ CubeObject::CubeObject(float xP, float yP, CubeMesh* cubeMeshP)
   setPosition(xP, yP);
 }
 
-void CubeObject::update() {
+void CubeObject::update() 
+{
 
 }
 
