@@ -1,2 +1,0 @@
-# opengl-training
-OpenGL lessons
