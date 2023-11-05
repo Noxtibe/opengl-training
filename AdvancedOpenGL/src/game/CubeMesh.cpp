@@ -1,9 +1,11 @@
 #include "CubeMesh.h"
 #include "../engine/Log.h"
 
-void CubeMesh::load() {
+void CubeMesh::load() 
+{
   glGenVertexArrays(1, &vao);
   glBindVertexArray(vao);
+
   static const GLfloat vertexPositions[] =
   {
           -0.25f,  0.25f, -0.25f,
@@ -67,10 +69,17 @@ void CubeMesh::load() {
   glEnableVertexAttribArray(0);
 }
 
-void CubeMesh::draw() {
+void CubeMesh::draw() 
+{
   glDrawArrays(GL_TRIANGLES, 0, 36);
 }
 
-void CubeMesh::clean() {
+void CubeMesh::drawTesselation() 
+{
+    glDrawArrays(GL_PATCHES, 0, 36);
+}
+
+void CubeMesh::clean() 
+{
   glDeleteVertexArrays(1, &vao);
 }

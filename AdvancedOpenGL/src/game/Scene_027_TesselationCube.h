@@ -3,7 +3,6 @@
 
 #include "../engine/Scene.h"
 #include "../engine/Assets.h"
-
 #include "CubeObject.h"
 
 class CubeMesh;
@@ -14,6 +13,7 @@ public:
 
     Scene_027_TesselationCube();
     ~Scene_027_TesselationCube();
+    
     void load();
     void clean();
     void pause();
@@ -33,7 +33,13 @@ private:
 
     vector<CubeObject> cubes;
     float newXPosition { 0 };
+
+    int texNoiseTexture;
+    int texNoiseTexture2;
+    int texNoiseTexture3;
+    int texNoiseTexture4;
+
+    float gameTime = 0;
 };
 
-
-#endif //Scene_027_TesselationCube_H
+#endif //Scene_027_TesselationCube

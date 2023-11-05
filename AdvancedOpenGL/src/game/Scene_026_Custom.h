@@ -24,12 +24,11 @@ private:
 
     Game *game;
     GLuint vao;
-    GLuint vbo;
-    GLuint buffer;
-    Matrix4 transform[24];
-    Matrix4 projection;
-
     Shader shader;
+    float timeSinceStart;
+
+    //bool pixelizeEnabled; // Pour activer/désactiver la pixelisation
+    //float pixelSize; // Pour contrôler la taille des pixels
 };
 
 

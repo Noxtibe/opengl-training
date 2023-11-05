@@ -3,12 +3,17 @@
 
 #include <GL/glew.h>
 
-class CubeMesh {
+class CubeMesh 
+{
 public:
+
   void load();
   void draw();
+  void drawTesselation();
   void clean();
+
 private:
+
   GLuint vao;
   GLuint buffer;
 };
