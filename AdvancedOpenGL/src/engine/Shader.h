@@ -31,12 +31,14 @@ public:
 
 	// Compiles the shader from given source code
 	void compile(
-		const GLchar *vertexSource,
-		const GLchar *fragmentSource,
-        const GLchar *tessControlSource = nullptr,
-        const GLchar *tessEvalSource = nullptr,
-		const GLchar *geometrySource = nullptr
+		const GLchar* vertexSource,
+		const GLchar* fragmentSource,
+		const GLchar* tessControlSource = nullptr,
+		const GLchar* tessEvalSource = nullptr,
+		const GLchar* geometrySource = nullptr
 	);
+
+	bool isValid() { return isValid( id ); }
 
 	// Utility functions
 	void setFloat(const GLchar *name, GLfloat value);
@@ -49,6 +51,13 @@ public:
 	void setVector4f(const GLchar *name, const Vector4 &value);
 	void setMatrix4(const GLchar *name, const Matrix4 &matrix);
 	void setMatrix4Row(const GLchar *name, const Matrix4Row &matrix);
+
+    static bool isValid(GLuint programId);
+    static void checkShaderErrors(GLuint shader, std::string shaderType);
+    static void printShaderInfoLog(GLuint shaderIndex);
+    static const char *GLTypeToString(GLenum type);
+    static void printAllParams(GLuint programId);
+    static void printProgramInfoLog(GLuint programId);
 
 private:
 	// Checks if compilation or linking failed and if so, print the error logs
@@ -67,12 +76,6 @@ private:
     bool compileGeometryShader(const GLchar *geometrySource);
     void createShaderProgram(bool tessShadersExist, bool geometryShaderExists);
 
-    void checkShaderErrors(GLuint shader, std::string shaderType);
-    void printShaderInfoLog(GLuint shaderIndex);
-    void printProgramInfoLog(GLuint programId);
-    const char *GLTypeToString(GLenum type);
-    void printAllParams(GLuint programId);
-    bool isValid(GLuint programId);
 };
 
 #endif

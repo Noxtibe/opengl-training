@@ -1,6 +1,8 @@
 #ifndef MATHS_VECTOR4_H
 #define MATHS_VECTOR4_H
 
+#include "Vector3.h"
+
 class Vector4
 {
     friend class Matrix4;
@@ -16,6 +18,13 @@ public:
 		,y(0.0f)
 		,z(0.0f)
 		,w(0.0f)
+	{}
+
+	explicit Vector4(const Vector3& pos, float inW) :
+		x( pos.x ),
+		y( pos.y ),
+		z( pos.z ),
+		w( inW )
 	{}
 
 	explicit Vector4(float inX, float inY, float inZ, float inW)

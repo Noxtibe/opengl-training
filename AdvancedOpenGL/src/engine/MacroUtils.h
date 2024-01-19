@@ -19,10 +19,11 @@
 #define SHADER_COMP(s) PATH3(SHADER_PATH,s,EXT_COMP)
 #define SHADER_ID(s) STR(s)
 
-#define SCENE_NAME Scene_026_Custom
-#define SHADER_NAME IDENT(026_Custom)
+#define SCENE_NAME Scene_028_ComputeShaderFX
+#define SHADER_NAME IDENT(028_ComputeShaderFX)
 
 /**
+ * Scene_028_ComputeShaderFX
  * Scene_027_TesselationCube
  * Scene_026_Custom
  * Scene_025_ComputeShaderBoids
