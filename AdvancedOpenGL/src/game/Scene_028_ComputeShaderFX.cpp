@@ -27,16 +27,16 @@ void Scene_028_ComputeShaderFX::clean()
 
 void Scene_028_ComputeShaderFX::handleEvent(const InputState& state)
 {
-	if (state.keyboardState.isJustPressed(SDL_SCANCODE_R))
+	if (state.keyboardState.isJustPressed(SDL_SCANCODE_L))
 	{
 		load();
 	}
 
-	if (state.keyboardState.isDown(SDL_SCANCODE_T))
+	if (state.keyboardState.isDown(SDL_SCANCODE_U))
 	{
 		simulation.timeScaling += 0.5f;
 	}
-	else if (state.keyboardState.isDown(SDL_SCANCODE_G))
+	else if (state.keyboardState.isDown(SDL_SCANCODE_I))
 	{
 		simulation.timeScaling -= 0.5f;
 	}
